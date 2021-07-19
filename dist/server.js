@@ -43,9 +43,11 @@ var express_1 = __importDefault(require("express"));
 var Database_1 = __importDefault(require("./core/data/connections/Database"));
 var UserRoutes_1 = __importDefault(require("./features/user/routes/UserRoutes"));
 var TransactionsRouter_1 = __importDefault(require("./features/transactions/routes/TransactionsRouter"));
+var cors_1 = __importDefault(require("cors"));
 var app = express_1.default();
 // Receber json no corpo da Requisição
 app.use(express_1.default.json());
+app.use(cors_1.default());
 // Vincular as rotas
 var userRoutes = new UserRoutes_1.default().init();
 var transactionRoutes = new TransactionsRouter_1.default().init();
