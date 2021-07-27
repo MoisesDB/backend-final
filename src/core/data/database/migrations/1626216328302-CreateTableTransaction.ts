@@ -42,13 +42,13 @@ export class CreateTableTransaction1626216328302 implements MigrationInterface {
             isNullable: false,
           },
         ],
-        foreignKeys: [
-          new TableForeignKey({
-            columnNames: ["id_owner"],
-            referencedColumnNames: ["id"],
-            referencedTableName: "user",
-          }),
-        ],
+        // foreignKeys: [
+        //   new TableForeignKey({
+        //     columnNames: ["id_owner"],
+        //     referencedColumnNames: ["id"],
+        //     referencedTableName: "user",
+        //   }),
+        // ],
       })
     );
   }

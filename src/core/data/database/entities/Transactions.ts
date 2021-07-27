@@ -43,9 +43,4 @@ export class Transactions extends BaseEntity {
     this.description = description;
     this.idOwner = idOwner;
   }
-
-  @BeforeInsert()
-  private fazerAntesDeInserir() {
-    console.log("Antes de Inserir");
-  }
 }

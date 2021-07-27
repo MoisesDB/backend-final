@@ -41,9 +41,6 @@ var Transactions = /** @class */ (function (_super) {
         _this.idOwner = idOwner;
         return _this;
     }
-    Transactions.prototype.fazerAntesDeInserir = function () {
-        console.log("Antes de Inserir");
-    };
     __decorate([
         typeorm_1.PrimaryGeneratedColumn(),
         __metadata("design:type", Number)
@@ -69,12 +66,6 @@ var Transactions = /** @class */ (function (_super) {
         typeorm_1.JoinColumn({ name: "id_owner", referencedColumnName: "id" }),
         __metadata("design:type", UserRoutes_1.default)
     ], Transactions.prototype, "user", void 0);
-    __decorate([
-        typeorm_1.BeforeInsert(),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", void 0)
-    ], Transactions.prototype, "fazerAntesDeInserir", null);
     Transactions = __decorate([
         typeorm_1.Entity({ name: "transactions" }),
         __metadata("design:paramtypes", [String, Number, String, Number])

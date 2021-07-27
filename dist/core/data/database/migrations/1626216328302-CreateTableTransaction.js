@@ -79,13 +79,13 @@ var CreateTableTransaction1626216328302 = /** @class */ (function () {
                                     isNullable: false,
                                 },
                             ],
-                            foreignKeys: [
-                                new typeorm_1.TableForeignKey({
-                                    columnNames: ["id_owner"],
-                                    referencedColumnNames: ["id"],
-                                    referencedTableName: "user",
-                                }),
-                            ],
+                            // foreignKeys: [
+                            //   new TableForeignKey({
+                            //     columnNames: ["id_owner"],
+                            //     referencedColumnNames: ["id"],
+                            //     referencedTableName: "user",
+                            //   }),
+                            // ],
                         }))];
                     case 1:
                         _a.sent();
