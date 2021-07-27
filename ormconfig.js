@@ -15,8 +15,8 @@ module.exports = {
       rejectUnauthorized: false,
     },
   },
-  migrations: ["src/core/data/database/migrations/**/*"],
-  entities: ["src/core/data/database/entities/**/*"],
+  migrations: ["dist/core/data/database/migrations/**/*"],
+  entities: ["dist/core/data/database/entities/**/*"],
   cli: {
     entitiesDir: "src/core/data/database/entities",
     migrationsDir: "src/core/data/database/migrations",
