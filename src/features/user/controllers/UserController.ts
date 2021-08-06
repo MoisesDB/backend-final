@@ -71,5 +71,22 @@ export default class UserController {
       .json((result.affected as number) > 0 ? "User excluído" : "Não Removeu");
   }
 
-  public async update(req: Request, res: Response) {}
+  public async update(req: Request, res: Response) {
+    const { id } = req.params;
+    const { name, email } = req.body;
+
+    const user = await User.findOne(id);
+    if (!user) {
+      return res.status(404).json({
+        msg: "Usuário não encontrado",
+      });
+    }
+
+    const result = await User.update(id, {
+      name,
+      email,
+    });
+
+    return res.json(result);
+  }
 }

@@ -20,6 +20,11 @@ export default class TransactionsController {
         msg: "O id do dono da transação deve ser informado",
       });
     }
+    if (!description) {
+      return res.status(400).json({
+        msg: "A descrição da transação deve ser informada",
+      });
+    }
 
     try {
       const transactions = new Transactions(
@@ -33,6 +38,23 @@ export default class TransactionsController {
     } catch (error) {
       return res.status(500).json(error);
     }
+  }
+
+  public async delete(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const transaction = await Transactions.findOne(id);
+    if (!transaction) {
+      return res.status(404).json({
+        msg: "Usuário não encontrado",
+      });
+    }
+
+    const result = await Transactions.delete(id);
+
+    return res
+      .status(200)
+      .json((result.affected as number) > 0 ? "User excluído" : "Não Removeu");
   }
 
   public async show(req: Request, res: Response) {

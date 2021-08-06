@@ -10,6 +10,7 @@ export default class TransactionRoutes {
     routes.post("/transaction", controller.store);
     routes.get("/transaction", controller.index);
     routes.get("/transaction/:id", controller.show);
+    routes.delete("/transaction/:id", controller.delete);
 
     return routes;
   }
